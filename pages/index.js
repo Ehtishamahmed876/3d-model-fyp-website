@@ -1,74 +1,43 @@
-
+import Link from 'next/link';
 import React from 'react';
-import { Canvas } from 'react-three-fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
+
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 
 
 
 function MyPage() {
-  const Model = () => {
-    const gltf = useGLTF("/models/headphone.gltf");
-    return <primitive object={gltf.scene} />;
-  };
-  const Model2 = () => {
-    const gltf = useGLTF("/models/camera.gltf");
-    return <primitive object={gltf.scene} />;
-  };
-  const Model3 = () => {
-    const gltf = useGLTF("/models/gamepad.gltf");
-    return <primitive object={gltf.scene} />;
-  };
-  const Model4 = () => {
-    const gltf = useGLTF("/models/computerprinter.gltf");
-    return <primitive object={gltf.scene} />;
-  };
-  
-
 
   return  (
     <>
-    <p className='text-center font-serif font-bold text-3xl  p-3 rounded-lg'>MY 3D Models</p>
-    <div className="flex  justify-center ">
-    <div className='border border-blue-600 m-5' style={{ width: '400px', height: '400px', margin: 'auto' }}>
-      <Canvas camera={{ position: [0,0, 40] }} >
-        <ambientLight />
-        <pointLight position={[20, 20, 20]} />
-        <Model />
-        <OrbitControls />
-      </Canvas>
-    </div>
-    <div className='border border-blue-600 m-5' style={{ width: '400px', height: '400px', margin: 'auto' }}>
-    <Canvas camera={{ position: [0, 0, -10] }} >
-    <ambientLight />
-        <pointLight position={[50, 50, 50]} />
-        <Model2  />
-        <OrbitControls />
-    </Canvas>
-    </div>
-    <div className='border border-blue-600 m-5' style={{ width: '400px', height: '400px', margin: 'auto' }}>
-    <Canvas camera={{ position: [0, 0, 15] }} >
-    <ambientLight />
-        <pointLight position={[20, 20, 20]} />
-        <Model3  />
-        <OrbitControls />
-    </Canvas>
-    </div>
+    <div className=' flex  flex-col  justify-between min-h-screen'>
+    <Header />
+    <div>
+    <p className='text-center font-serif font-bold text-3xl  p-3 rounded-lg'>All Chapters</p>
+    <div className='p-2 flex justify-center items-center gap-5'>
+    <Link href="/chapter1">
+      <div className=" border border-black h-44 w-44 md:h-72 md:w-72 bg-blue-700 rounded-lg   flex items-center justify-center">
+        <div className="text-white  text-center">
+          <h2 className="text-2xl md:text-4xl font-serif font-bold">Chapter 1</h2>
+        </div>
+      </div>
+    </Link>
+    <Link href="/chapter2">
+      <div className=" border border-black h-44 w-44 md:h-72 md:w-72 bg-blue-700 rounded-lg   flex items-center justify-center">
+        <div className="text-white  text-center">
+          <h2 className="text-2xl md:text-4xl font-serif font-bold">Chapter 2</h2>
+        </div>
+      </div>
+    </Link>
+
+   
 
     </div>
-    <div className="flex  justify-center p-2 ">
-    <div className='border border-blue-600 m-5' style={{ width: '400px', height: '400px', margin: 'auto' }}>
-      <Canvas camera={{ position: [0, 0, 50] }} size={[2000, 1600]}>
-        <ambientLight />
-        <pointLight position={[50, 50, 50]} />
-        <Model4 />
-        <OrbitControls />
-      </Canvas>
     </div>
-  
-
+    <Footer />
     </div>
-
+    
   </>
   )
 }
