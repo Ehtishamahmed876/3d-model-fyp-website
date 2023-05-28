@@ -1,10 +1,8 @@
-import {OBJLoader} from 'three/examples/jsm/loaders/OBJLoader.js';
-import {useRef, useEffect} from 'react';
-import {useLoader} from '@react-three/fiber';
+
 import React from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
-import Object3D from './objectmodel';
+
 
 
 
