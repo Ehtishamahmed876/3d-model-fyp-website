@@ -7,6 +7,13 @@ import Header from '@/components/Header';
 
 
 function Chapter1() {
+  const models = [
+    { type: "headphone", url:"/models/headphone.gltf"
+  },
+    { type: "camera", url:"/models/camera.gltf" ,}
+ 
+  ];
+   
   const Model = () => {
     const gltf = useGLTF("/models/headphone.gltf");
     return <primitive object={gltf.scene} />;
@@ -16,13 +23,54 @@ function Chapter1() {
     return <primitive object={gltf.scene} />;
   };
   const Model3 = () => {
-    const gltf = useGLTF("/models/gamepad.gltf");
+    const gltf = useGLTF("/models/keyboard.gltf");
     return <primitive object={gltf.scene} />;
   };
   const Model4 = () => {
     const gltf = useGLTF("/models/computerprinter.gltf");
     return <primitive object={gltf.scene} />;
   };
+
+ 
+  const Model5 = () => {
+    const gltf = useGLTF("/models/mouse.gltf");
+    return <primitive object={gltf.scene} />;
+  };
+
+  const Model6 = () => {
+    const gltf = useGLTF("/models/10818_DigitalCamera_v2.gltf");
+    return <primitive object={gltf.scene} />;
+  };
+  const Model7 = () => {
+    const gltf = useGLTF("/models/camera1.gltf");
+    return <primitive object={gltf.scene} />;
+  };
+  const Model8 = () => {
+    const gltf = useGLTF("/models/scanner-FINAL.gltf");
+    return <primitive object={gltf.scene} />;
+  };
+
+  // const Model9 = () => {
+  //   const gltf = useGLTF("/models/led.gltf");
+  //   return <primitive object={gltf.scene} />;
+  // };
+ 
+  const Model10 = () => {
+    const gltf = useGLTF("/models/OptomaProjector.gltf");
+    return <primitive object={gltf.scene} />;
+  };
+  
+  const Model11 = () => {
+    const gltf = useGLTF("/models/speaker.gltf");
+    return <primitive object={gltf.scene} />;
+  };
+
+// chapter 1
+
+ 
+ 
+
+ 
   
 
 
@@ -31,23 +79,112 @@ function Chapter1() {
     <div className='min-h-screen'>
     <Header />
     <p className='text-center font-serif font-bold text-3xl  p-3 rounded-lg'> 3D Models</p>
-    <div className="flex flex-wrap  justify-center ">
-    <div className='border border-blue-600 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-      <Canvas camera={{ position: [0,0, 40] }} >
-        <ambientLight />
-        <pointLight position={[20, 20, 20]} />
-        <Model />
-        <OrbitControls />
-      </Canvas>
-    </div>
-    <div className='border border-blue-600 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <div className="flex flex-wrap gap-14  justify-center ">
+    
+     
+        <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+        <Canvas camera={{ position: [0,0, 40] }} >
+          <ambientLight />
+          <pointLight position={[20, 20, 20]} />
+          <Model />
+          <OrbitControls />
+        </Canvas>
+         <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>headphone</p>
+      </div>
+
+          
+    
+
+     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
     <Canvas camera={{ position: [0, 0, -10] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
         <Model2  />
         <OrbitControls />
     </Canvas>
-    </div>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>CCTV</p>
+    </div> 
+    {/* <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+        <Canvas camera={{ position: [0,0, 16] }} >
+          <ambientLight />
+          <pointLight position={[20, 20, 20]} />
+          <Model3 />
+          <OrbitControls />
+        </Canvas>
+         <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Desktop Computer</p>
+      </div>
+     */}
+
+    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <Canvas camera={{ position: [0, 0, 50] }} >
+    <ambientLight />
+        <pointLight position={[50, 50, 50]} />
+        <Model4  />
+        <OrbitControls />
+    </Canvas>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Computer Printer</p>
+    </div> 
+    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <Canvas camera={{ position: [0, 0, 20] }} >
+    <ambientLight />
+        <pointLight position={[50, 50, 50]} />
+        <Model5  />
+        <OrbitControls />
+    </Canvas>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Mouse</p>
+    </div> 
+
+    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <Canvas camera={{ position: [0, 0, 20] }} >
+    <ambientLight />
+        <pointLight position={[50, 50, 50]} />
+        <Model6  />
+        <OrbitControls />
+    </Canvas>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Digital Camera</p>
+    </div> 
+
+
+
+    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <Canvas camera={{ position: [0, 0, 70] }} >
+    <ambientLight />
+        <pointLight position={[50, 50, 50]} />
+        <Model8  />
+        <OrbitControls />
+    </Canvas>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Camera</p>
+    </div> 
+
+    {/* <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <Canvas camera={{ position: [0, 0, -10] }} >
+    <ambientLight />
+        <pointLight position={[50, 50, 50]} />
+        <Model9  />
+        <OrbitControls />
+    </Canvas>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>CCTV</p>
+    </div>  */}
+
+    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <Canvas camera={{ position: [0, 0, 40] }} >
+    <ambientLight />
+        <pointLight position={[50, 50, 50]} />
+        <Model10  />
+        <OrbitControls />
+    </Canvas>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Projector</p>
+    </div> 
+
+    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <Canvas camera={{ position: [0, 0, 650] }} >
+    <ambientLight />
+        <pointLight position={[50, 50, 50]} />
+        <Model11  />
+        <OrbitControls />
+    </Canvas>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Speaker</p>
+    </div> 
 
 
     </div>
