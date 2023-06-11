@@ -19,34 +19,34 @@ function Chapter1() {
     return <primitive object={gltf.scene} />;
   };
   const Model2 = () => {
-    const gltf = useGLTF("/models/camera.gltf");
+    const gltf = useGLTF("/models/cctv.gltf");
     return <primitive object={gltf.scene} />;
   };
   const Model3 = () => {
-    const gltf = useGLTF("/models/keyboard.gltf");
+    const gltf = useGLTF("/models/microphone.gltf");
     return <primitive object={gltf.scene} />;
   };
   const Model4 = () => {
-    const gltf = useGLTF("/models/computerprinter.gltf");
+    const gltf = useGLTF("/models/printer.gltf");
     return <primitive object={gltf.scene} />;
   };
 
  
   const Model5 = () => {
-    const gltf = useGLTF("/models/mouse.gltf");
+    const gltf = useGLTF("/models/mouse1.gltf");
     return <primitive object={gltf.scene} />;
   };
 
   const Model6 = () => {
-    const gltf = useGLTF("/models/10818_DigitalCamera_v2.gltf");
+    const gltf = useGLTF("/models/digitalcamera.gltf");
     return <primitive object={gltf.scene} />;
   };
   const Model7 = () => {
-    const gltf = useGLTF("/models/camera1.gltf");
+    const gltf = useGLTF("/models/barcodereader.gltf");
     return <primitive object={gltf.scene} />;
   };
   const Model8 = () => {
-    const gltf = useGLTF("/models/scanner-FINAL.gltf");
+    const gltf = useGLTF("/models/barcodereader.gltf");
     return <primitive object={gltf.scene} />;
   };
 
@@ -56,7 +56,7 @@ function Chapter1() {
   // };
  
   const Model10 = () => {
-    const gltf = useGLTF("/models/OptomaProjector.gltf");
+    const gltf = useGLTF("/models/projector1.gltf");
     return <primitive object={gltf.scene} />;
   };
   
@@ -83,7 +83,7 @@ function Chapter1() {
     
      
         <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-        <Canvas camera={{ position: [0,0, 40] }} >
+        <Canvas camera={{ position: [0,0, 50] }} >
           <ambientLight />
           <pointLight position={[20, 20, 20]} />
           <Model />
@@ -96,7 +96,7 @@ function Chapter1() {
     
 
      <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [0, 0, -10] }} >
+    <Canvas camera={{ position: [0, 0, 10] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
         <Model2  />
@@ -104,16 +104,16 @@ function Chapter1() {
     </Canvas>
     <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>CCTV</p>
     </div> 
-    {/* <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-        <Canvas camera={{ position: [0,0, 16] }} >
+    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+        <Canvas camera={{ position: [0,0, 40] }} >
           <ambientLight />
           <pointLight position={[20, 20, 20]} />
           <Model3 />
           <OrbitControls />
         </Canvas>
-         <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Desktop Computer</p>
+         <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Microphone</p>
       </div>
-     */}
+    
 
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
     <Canvas camera={{ position: [0, 0, 50] }} >
@@ -147,13 +147,13 @@ function Chapter1() {
 
 
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [0, 0, 70] }} >
+    <Canvas camera={{ position: [0, 0, 120] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
         <Model8  />
         <OrbitControls />
     </Canvas>
-    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Camera</p>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Barcode Reader</p>
     </div> 
 
     {/* <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
@@ -167,9 +167,9 @@ function Chapter1() {
     </div>  */}
 
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [0, 0, 40] }} >
+    <Canvas camera={{ position: [40, 40, 40] }} >
     <ambientLight />
-        <pointLight position={[50, 50, 50]} />
+        <pointLight position={[40, 40, 40]} />
         <Model10  />
         <OrbitControls />
     </Canvas>
@@ -177,7 +177,7 @@ function Chapter1() {
     </div> 
 
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [0, 0, 650] }} >
+    <Canvas camera={{ position: [400,400, 300] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
         <Model11  />

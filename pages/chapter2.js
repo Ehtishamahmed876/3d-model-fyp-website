@@ -9,21 +9,21 @@ import Header from '@/components/Header';
 function Chapter2() {
 
   const Model = () => {
-    const gltf = useGLTF("/models/gamepad.gltf");
+    const gltf = useGLTF("/models/gamepad1.gltf");
     return <primitive object={gltf.scene} />;
   };
   const Model2 = () => {
-    const gltf = useGLTF("/models/cpu.gltf");
+    const gltf = useGLTF("/models/pc1.gltf");
     return <primitive object={gltf.scene} />;
   };
 
   const Model3 = () => {
-    const gltf = useGLTF("/models/laptop.gltf");
+    const gltf = useGLTF("/models/lednew.gltf");
     return <primitive object={gltf.scene} />;
   };
 
   const Model4 = () => {
-    const gltf = useGLTF("/models/usb.gltf");
+    const gltf = useGLTF("/models/flashdrive.gltf");
     return <primitive object={gltf.scene} />;
   };
   const Model5 = () => {
@@ -41,7 +41,7 @@ function Chapter2() {
     <div className="flex flex-wrap gap-14 justify-center ">
    
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-        <Canvas camera={{ position: [0,0, 20] }} >
+        <Canvas camera={{ position: [10,10, 10] }} >
           <ambientLight />
           <pointLight position={[20, 20, 20]} />
           <Model />
@@ -54,27 +54,27 @@ function Chapter2() {
     
 
      <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [0, 0, 15] }} >
+    <Canvas camera={{ position: [10, 10, 10] }} >
     <ambientLight />
-        <pointLight position={[50, 50, 50]} />
+        <pointLight position={[20, 20, 10]} />
         <Model2  />
         <OrbitControls />
     </Canvas>
-    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>CPU</p>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Desktop Computer</p>
     </div> 
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-        <Canvas camera={{ position: [0,0, -250] }} >
+        <Canvas camera={{ position: [10,10, 10] }} >
           <ambientLight />
-          <pointLight position={[20, 20, 20]} />
+          <pointLight position={[10, 10, 10]} />
           <Model3 />
           <OrbitControls />
         </Canvas>
-         <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Desktop Computer</p>
+         <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>LED</p>
       </div>
     
 
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [0, 0, 150] }} >
+    <Canvas camera={{ position: [100, 100, 100] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
         <Model4  />
@@ -83,7 +83,7 @@ function Chapter2() {
     <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>USB</p>
     </div> 
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [0, 0, 20] }} >
+    <Canvas camera={{ position: [10, 10, 10] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
         <Model5  />

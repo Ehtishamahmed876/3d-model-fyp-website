@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
         <Link href="/">
           <div className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-            <Image className='rounded-lg' src={"/models/aiou.png"} height={50} width={50} />
+            <Image className='rounded-lg' src={"/models/aiou.png"} alt='aiou' height={50} width={50} />
             <span className="ml-3 text-xl">BookTo3D</span>
           </div>
         </Link>
