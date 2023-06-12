@@ -31,6 +31,15 @@ function Chapter2() {
     return <primitive object={gltf.scene} />;
   };
   
+  const Model6 = () => {
+    const gltf = useGLTF("/models/digitalcamera.gltf");
+    return <primitive object={gltf.scene} />;
+  };
+
+  const Model8 = () => {
+    const gltf = useGLTF("/models/barcodereader.gltf");
+    return <primitive object={gltf.scene} />;
+  };
 
 
   return  (
@@ -53,7 +62,7 @@ function Chapter2() {
           
     
 
-     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+     {/* <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
     <Canvas camera={{ position: [10, 10, 10] }} >
     <ambientLight />
         <pointLight position={[20, 20, 10]} />
@@ -61,7 +70,7 @@ function Chapter2() {
         <OrbitControls />
     </Canvas>
     <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Desktop Computer</p>
-    </div> 
+    </div>  */}
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
         <Canvas camera={{ position: [10,10, 10] }} >
           <ambientLight />
@@ -83,13 +92,34 @@ function Chapter2() {
     <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>USB</p>
     </div> 
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [10, 10, 10] }} >
+    <Canvas camera={{ position: [20, 20, 20] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
         <Model5  />
         <OrbitControls />
     </Canvas>
     <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Webcam</p>
+    </div> 
+    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <Canvas camera={{ position: [0, 0, 20] }} >
+    <ambientLight />
+        <pointLight position={[50, 50, 50]} />
+        <Model6  />
+        <OrbitControls />
+    </Canvas>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Digital Camera</p>
+    </div> 
+
+
+
+    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <Canvas camera={{ position: [0, 0, 120] }} >
+    <ambientLight />
+        <pointLight position={[50, 50, 50]} />
+        <Model8  />
+        <OrbitControls />
+    </Canvas>
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Barcode Reader</p>
     </div> 
     </div>
 

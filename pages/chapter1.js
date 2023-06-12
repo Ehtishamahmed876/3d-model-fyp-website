@@ -37,23 +37,11 @@ function Chapter1() {
     return <primitive object={gltf.scene} />;
   };
 
-  const Model6 = () => {
-    const gltf = useGLTF("/models/digitalcamera.gltf");
+ 
+  const Model9 = () => {
+    const gltf = useGLTF("/models/keyboard.gltf");
     return <primitive object={gltf.scene} />;
   };
-  const Model7 = () => {
-    const gltf = useGLTF("/models/barcodereader.gltf");
-    return <primitive object={gltf.scene} />;
-  };
-  const Model8 = () => {
-    const gltf = useGLTF("/models/barcodereader.gltf");
-    return <primitive object={gltf.scene} />;
-  };
-
-  // const Model9 = () => {
-  //   const gltf = useGLTF("/models/led.gltf");
-  //   return <primitive object={gltf.scene} />;
-  // };
  
   const Model10 = () => {
     const gltf = useGLTF("/models/projector1.gltf");
@@ -134,38 +122,18 @@ function Chapter1() {
     <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Mouse</p>
     </div> 
 
-    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [0, 0, 20] }} >
-    <ambientLight />
-        <pointLight position={[50, 50, 50]} />
-        <Model6  />
-        <OrbitControls />
-    </Canvas>
-    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Digital Camera</p>
-    </div> 
-
 
 
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [0, 0, 120] }} >
-    <ambientLight />
-        <pointLight position={[50, 50, 50]} />
-        <Model8  />
-        <OrbitControls />
-    </Canvas>
-    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Barcode Reader</p>
-    </div> 
-
-    {/* <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [0, 0, -10] }} >
+    <Canvas camera={{ position: [0, 0, 10] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
         <Model9  />
         <OrbitControls />
     </Canvas>
-    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>CCTV</p>
-    </div>  */}
-
+    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Keyboard</p>
+    </div> 
+{/* 
     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
     <Canvas camera={{ position: [40, 40, 40] }} >
     <ambientLight />
@@ -174,9 +142,9 @@ function Chapter1() {
         <OrbitControls />
     </Canvas>
     <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Projector</p>
-    </div> 
+    </div>  */}
 
-    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <div className='border border-blue-600 bg-blue-600 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
     <Canvas camera={{ position: [400,400, 300] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
