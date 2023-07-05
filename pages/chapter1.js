@@ -2,11 +2,12 @@ import React from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import Header from '@/components/Header';
+import { withIronSessionSsr } from 'iron-session/next';
+import { sessionOptions } from '/lib/withSession';
 
 
 
-
-function Chapter1() {
+function Chapter1({user}) {
   const models = [
     { type: "headphone", url:"/models/headphone.gltf"
   },
@@ -64,13 +65,11 @@ function Chapter1() {
 
   return  (
     <>
-    <div className='min-h-screen'>
-    <Header />
+    <div className='min-h-screen bg-white'>
+    <Header name={user.user.username} />
     <p className='text-center font-serif font-bold text-3xl  p-3 rounded-lg'> 3D Models</p>
-    <div className="flex flex-wrap gap-14  justify-center ">
-    
-     
-        <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <div className="flex flex-wrap gap-14 justify-start  pb-20 ">
+        <div className='border border-blue-600 bg-green-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
         <Canvas camera={{ position: [0,0, 50] }} >
           <ambientLight />
           <pointLight position={[20, 20, 20]} />
@@ -78,12 +77,12 @@ function Chapter1() {
           <OrbitControls />
         </Canvas>
          <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>headphone</p>
-      </div>
+    </div>
 
           
     
 
-     <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+     <div className='border border-blue-600 bg-green-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
     <Canvas camera={{ position: [0, 0, 10] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
@@ -92,7 +91,7 @@ function Chapter1() {
     </Canvas>
     <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>CCTV</p>
     </div> 
-    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <div className='border border-blue-600 bg-green-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
         <Canvas camera={{ position: [0,0, 40] }} >
           <ambientLight />
           <pointLight position={[20, 20, 20]} />
@@ -103,7 +102,7 @@ function Chapter1() {
       </div>
     
 
-    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <div className='border border-blue-600 bg-green-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
     <Canvas camera={{ position: [0, 0, 50] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
@@ -112,7 +111,7 @@ function Chapter1() {
     </Canvas>
     <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Computer Printer</p>
     </div> 
-    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <div className='border border-blue-600 bg-green-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
     <Canvas camera={{ position: [0, 0, 20] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
@@ -124,7 +123,7 @@ function Chapter1() {
 
 
 
-    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <div className='border border-blue-600 bg-green-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
     <Canvas camera={{ position: [0, 0, 10] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
@@ -133,18 +132,8 @@ function Chapter1() {
     </Canvas>
     <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Keyboard</p>
     </div> 
-{/* 
-    <div className='border border-blue-600 bg-blue-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
-    <Canvas camera={{ position: [40, 40, 40] }} >
-    <ambientLight />
-        <pointLight position={[40, 40, 40]} />
-        <Model10  />
-        <OrbitControls />
-    </Canvas>
-    <p className='text-center bg-black p-2 rounded-md mt-1 text-white font-serif text-lg'>Projector</p>
-    </div>  */}
 
-    <div className='border border-blue-600 bg-blue-600 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
+    <div className='border border-blue-600 bg-green-500 m-5 w-64 h-64 md:w-96 md:h-96 md:m-auto' >
     <Canvas camera={{ position: [400,400, 300] }} >
     <ambientLight />
         <pointLight position={[50, 50, 50]} />
@@ -163,3 +152,32 @@ function Chapter1() {
 }
 
 export default Chapter1;
+export const getServerSideProps = withIronSessionSsr( function ({
+  req,
+  res,
+}) {
+  const user = req.session.user
+  // console.log("hello")
+  
+
+  if (user === undefined) {
+      res.setHeader('location', '/')
+      res.statusCode = 302
+      res.end()
+      return {
+          props: {
+              user: { isLoggedIn: false,  email: '',name:'', }
+
+          },
+      }
+  }
+
+
+
+  return {
+      
+      props: { user: req.session.user,},
+  
+  }
+},
+sessionOptions)
