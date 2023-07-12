@@ -2,13 +2,11 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
     
     return (
-      <footer className="bg-black text-white py-4">
-        <div className="container mx-auto text-center">
-          <p className="text-sm">
-            &copy; {currentYear} All Rights Reserved
-          </p>
-        </div>
-      </footer>
+      <footer className="bg-white mt-auto">
+      <div className="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-gray-500">© 2023 Your Company. All rights reserved.</p>
+      </div>
+    </footer>
     );
   };
   

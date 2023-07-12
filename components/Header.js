@@ -16,35 +16,21 @@ const Header = ({name}) => {
 		}
 	}
   return (
-    <header className="bg-gray-900 flex justify-between items-center p-3">
-   
-    
-       <div>
-       <Link href="/home">
-          <div className="flex  title-font font-medium items-center text-white mb-4 md:mb-0">
-            <Image className='rounded-lg' src={"/models/aiou.png"} alt='aiou' height={50} width={50} />
-            <span className="ml-3 text-xl">BookTo3D</span>
-          </div>
-        </Link>
-       </div>
-       
-      
-        <div>
-        <h2 className='font-serif text-3xl mr-20'>{name}</h2>
+<header className="bg-white shadow flex justify-around items-center p-3">
+  <Link href="/home">
+    <div className="flex-shrink-0 flex gap-2 items-center">
+      <img className="h-16 w-auto" src="/logo3d2.jpeg" alt="Logo" />
+      <h2 className="text-black text-xl font-serif">BookTo3D</h2>
+    </div>
+  </Link>
+  <div>
+    <h2 className="font-serif text-black text-3xl lg:mr-12">{name}</h2>
+  </div>
+  <div>
+    <div onClick={onLogout} className="cursor-pointer bg-red-600 p-3 text-white">Logout</div>
+  </div>
+</header>
 
-        </div>
-          
-       
-        <div className="">
-          {/* <Link href="/"> */}
-            <div onClick={onLogout} className="mr-5 cursor-pointer bg-red-600 p-3 text-white">Logout</div>
-          {/* </Link> */}
-          {/* <Link href="/about">
-            <div className="mr-5 text-white">About</div>
-          </Link> */}
-        </div>
-
-    </header>
   );
 };
 
