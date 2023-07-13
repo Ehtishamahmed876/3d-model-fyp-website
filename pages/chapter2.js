@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 
 
-function Chapter2({user}) {
+function Chapter2() {
 
   const Model9= () => {
     const gltf = useGLTF("/models/gamepad1.gltf");
@@ -54,7 +54,7 @@ function Chapter2({user}) {
   return  (
     <>
     <div className='min-h-screen bg-white'>
-    <Header name={user.user.username}/>
+    <Header name={"Saba"}/>
     <p className='text-center font-serif font-bold text-3xl  p-3 rounded-lg'> 3D Models</p>
     <div className="flex flex-wrap gap-14 justify-start  pb-20">
    
@@ -141,32 +141,32 @@ function Chapter2({user}) {
 }
 
 export default Chapter2;
-export const getServerSideProps = withIronSessionSsr( function ({
-  req,
-  res,
-}) {
-  const user = req.session.user
-  // console.log("hello")
+// export const getServerSideProps = withIronSessionSsr( function ({
+//   req,
+//   res,
+// }) {
+//   const user = req.session.user
+//   // console.log("hello")
   
 
-  if (user === undefined) {
-      res.setHeader('location', '/')
-      res.statusCode = 302
-      res.end()
-      return {
-          props: {
-              user: { isLoggedIn: false,  email: '',name:'', }
+//   if (user === undefined) {
+//       res.setHeader('location', '/')
+//       res.statusCode = 302
+//       res.end()
+//       return {
+//           props: {
+//               user: { isLoggedIn: false,  email: '',name:'', }
 
-          },
-      }
-  }
+//           },
+//       }
+//   }
 
 
 
-  return {
+//   return {
       
-      props: { user: req.session.user,},
+//       props: { user: req.session.user,},
   
-  }
-},
-sessionOptions)
+//   }
+// },
+// sessionOptions)

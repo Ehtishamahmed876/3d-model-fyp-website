@@ -1,16 +1,16 @@
 import { useRouter } from 'next/router';
-import models from './models';
+import models from '../../constants/models';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
-import { withIronSessionSsr } from 'iron-session/next';
-import { sessionOptions } from '/lib/withSession';
+// import { withIronSessionSsr } from 'iron-session/next';
+// import { sessionOptions } from '/lib/withSession';
 import { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 // import models from '.'; // Import the models array
 
 
 
-const ModelPage = ({user}) => {
+const ModelPage = () => {
   const router = useRouter();
   const { id } = router.query;
   const [selectedModel, setSelectedModel] = useState(null);
@@ -34,7 +34,7 @@ const ModelPage = ({user}) => {
 
   return (
     <div className="min-h-screen bg-white">
-        <Header name={user.user.username} />
+        <Header name={"Saba"} />
       <div className='flex flex-col justify-center p-5 m-5 gap-2 items-center'>
       <h2 className='text-black text-3xl'>{selectedModel.name}</h2>
       <div className='border border-blue-600 bg-blue-500 rounded-xl m-5 w-64 h-64 md:w-full md:h-[40rem] md:m-auto'>
@@ -43,7 +43,7 @@ const ModelPage = ({user}) => {
             <pointLight intensity={1} position={[2, 2, 2]} />
             <selectedModel.component />
             <OrbitControls />
-          </Canvas>
+      </Canvas>
     
       </div>
     </div>
@@ -55,32 +55,32 @@ const ModelPage = ({user}) => {
 export default ModelPage;
 
 
-export const getServerSideProps = withIronSessionSsr( function ({
-  req,
-  res,
-}) {
-  const user = req.session.user
-  // console.log("hello")
+// export const getServerSideProps = withIronSessionSsr( function ({
+//   req,
+//   res,
+// }) {
+//   const user = req.session.user
+//   // console.log("hello")
   
 
-  if (user === undefined) {
-      res.setHeader('location', '/')
-      res.statusCode = 302
-      res.end()
-      return {
-          props: {
-              user: { isLoggedIn: false,  email: '',name:'', }
+//   if (user === undefined) {
+//       res.setHeader('location', '/')
+//       res.statusCode = 302
+//       res.end()
+//       return {
+//           props: {
+//               user: { isLoggedIn: false,  email: '',name:'', }
 
-          },
-      }
-  }
+//           },
+//       }
+//   }
 
 
 
-  return {
+//   return {
       
-      props: { user: req.session.user,},
+//       props: { user: req.session.user,},
   
-  }
-},
-sessionOptions)
+//   }
+// },
+// sessionOptions)

@@ -2,13 +2,13 @@ import React from 'react';
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import Header from '@/components/Header';
-import { withIronSessionSsr } from 'iron-session/next';
-import { sessionOptions } from '/lib/withSession';
+// import { withIronSessionSsr } from 'iron-session/next';
+// import { sessionOptions } from '/lib/withSession';
 import Link from 'next/link';
 
 
 
-function Chapter1({user}) {
+function Chapter1() {
   const models2 = [
     { type: "headphone", url:"/models/headphone.gltf"
   },
@@ -75,7 +75,7 @@ function Chapter1({user}) {
   return  (
     <>
     <div className='min-h-screen bg-white'>
-    <Header name={user.user.username} />
+    <Header name={"Saba"} />
     <p className='text-center font-serif font-bold text-3xl  p-3 rounded-lg'> 3D Models</p>
     <div className="flex flex-wrap gap-14 justify-start  pb-20 ">
         {models.map((model) => (
@@ -171,32 +171,32 @@ function Chapter1({user}) {
 }
 
 export default Chapter1;
-export const getServerSideProps = withIronSessionSsr( function ({
-  req,
-  res,
-}) {
-  const user = req.session.user
-  // console.log("hello")
+// export const getServerSideProps = withIronSessionSsr( function ({
+//   req,
+//   res,
+// }) {
+//   const user = req.session.user
+//   // console.log("hello")
   
 
-  if (user === undefined) {
-      res.setHeader('location', '/')
-      res.statusCode = 302
-      res.end()
-      return {
-          props: {
-              user: { isLoggedIn: false,  email: '',name:'', }
+//   if (user === undefined) {
+//       res.setHeader('location', '/')
+//       res.statusCode = 302
+//       res.end()
+//       return {
+//           props: {
+//               user: { isLoggedIn: false,  email: '',name:'', }
 
-          },
-      }
-  }
+//           },
+//       }
+//   }
 
 
 
-  return {
+//   return {
       
-      props: { user: req.session.user,},
+//       props: { user: req.session.user,},
   
-  }
-},
-sessionOptions)
+//   }
+// },
+// sessionOptions)

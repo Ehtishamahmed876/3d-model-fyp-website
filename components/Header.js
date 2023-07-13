@@ -27,7 +27,11 @@ const Header = ({name}) => {
     <h2 className="font-serif text-black text-3xl lg:mr-12">{name}</h2>
   </div>
   <div>
-    <div onClick={onLogout} className="cursor-pointer bg-red-600 p-3 text-white">Logout</div>
+  <Link href="/">
+
+    <div  className="cursor-pointer bg-red-600 p-3 text-white">Logout</div>
+  </Link>
+
   </div>
 </header>
 
